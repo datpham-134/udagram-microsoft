@@ -1,14 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  POSTGRES_HOST: udagram-microservice-rds-280306483984.cjgvvslmdffq.ap-southeast-1.rds.amazonaws.com
-  POSTGRES_DB: postgres
   AWS_BUCKET: udagram-microservice-280306483984
-  AWS_REGION: ap-southeast-1
   AWS_PROFILE: eks-admin
+  AWS_REGION: ap-southeast-1
   JWT_SECRET: testing
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: udagram-microservice-rds-280306483984.cjgvvslmdffq.ap-southeast-1.rds.amazonaws.com
   URL: http://localhost:8100
 metadata:
   name: env-config
-  
-kubectl create secret generic aws-region--from-literal=aws-region-key='ap-southeast-1'

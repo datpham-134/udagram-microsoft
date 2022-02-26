@@ -23,35 +23,35 @@ spec:
             - name: POSTGRES_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: database-user
-                  key: database-username
+                  name: env-secret
+                  key: POSTGRES_USERNAME 
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-password
-                  key: database-password
+                  name: env-secret
+                  key: POSTGRES_PASSWORD
             - name: POSTGRES_HOST
               valueFrom:
-                secretKeyRef:
-                  name: postgres-host
-                  key: postgres-hosting
+                configMapKeyRef:
+                  name: env-config
+                  key: POSTGRES_HOST
             - name: POSTGRES_DB
               valueFrom:
-                secretKeyRef:
-                  name: postgres-db-name
-                  key: postgres-db-name-key
+                configMapKeyRef:
+                  name: env-config
+                  key: POSTGRES_DB
             - name: AWS_BUCKET
               valueFrom:
-                secretKeyRef:
-                  name: aws-bucket
-                  key: aws-bucket-key
+                configMapKeyRef:
+                  name: env-config
+                  key: AWS_BUCKET
             - name: AWS_REGION
               valueFrom:
-                secretKeyRef:
-                  name: aws-region
-                  key: aws-region-key
+                configMapKeyRef:
+                  name: env-config
+                  key: AWS_REGION
             - name: JWT_SECRET
               valueFrom:
-                secretKeyRef:
-                  name: jwt-secret
-                  key: jwt-secret-key
+                configMapKeyRef:
+                  name: env-config
+                  key: JWT_SECRET

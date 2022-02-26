@@ -15,7 +15,8 @@ spec:
         app: udagram-frontend
     spec:
       containers:
-        - name: udagram-frontend
-          image: datpham134/udagram-api-user:latest
-          ports:
-            - containerPort: 80
+      - name: udagram-frontend
+        image: datpham134/udagram-frontend:latest
+        ports:
+        - containerPort: 80
+        
